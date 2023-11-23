@@ -1,0 +1,11 @@
+Juan Pérez;12345678-9;35;Odontología General
+María González;98765432-1;28;Endodoncia
+Luis Martínez;56789012-3;42;Prostodoncia
+Ana Rodríguez;34567890-1;30;Ortodoncia
+Pedro Sánchez;21098765-4;25;Odontología Restauradora
+Carla Fernández;45678901-2;38;Periodoncia
+Diego López;78901234-5;45;Cirugía Oral y Maxilofacial
+Laura Ramírez;23456789-0;33;Radiología Odontológica
+Sofía Castro;89012345-6;29;Odontología Pediátrica
+Javier Torres;67890123-7;40;Odontología Estética
+Eduardo Ruiz;17654321-8;36;Odontología Preventiva

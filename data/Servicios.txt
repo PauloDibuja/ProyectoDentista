@@ -1,0 +1,20 @@
+SD001;Limpieza dental;60000;Odontología General
+SD002;Extracción de muela;90000;Cirugía Oral y Maxilofacial
+SD003;Empaste dental;120000;Odontología General
+SD004;Blanqueamiento dental;160000;Odontología Estética
+SD005;Ortodoncia;200000;Ortodoncia
+SD006;Endodoncia;240000;Endodoncia
+SD007;Coronas dentales;280000;Prostodoncia
+SD008;Implante dental;640000;Cirugía Oral y Maxilofacial
+SD009;Prótesis dental completa;800000;Prostodoncia
+SD010;Revisión y diagnóstico;48000;Odontología General
+SD011;Fluorización;56000;Odontología Preventiva
+SD012;Radiografía dental;72000;Radiología Odontológica
+SD013;Tratamiento de conducto;224000;Endodoncia
+SD014;Remoción de sarro;80000;Odontología General
+SD015;Sellado de fosas y fisuras;96000;Odontología Pediátrica
+SD016;Reconstrucción dental;176000;Odontología Restauradora
+SD017;Tratamiento de encías;144000;Periodoncia
+SD018;Extracción de dientes de leche;40000;Odontología Pediátrica
+SD019;Implante de amalgama;128000;Odontología Restauradora
+SD020;Estudios de ortopantomografía;96000;Radiología Odontológica

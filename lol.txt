@@ -1,0 +1,36 @@
+!!!!!!!!!!
+
+
+dotnet run "
+
+
+./program arg0 arg1 arg2
+
+
+
+BIENVENIDO A NUESTRO DENTISTA DIBUJA'S
+DONDE LE DIBUJAMOS EL PARACETAMOL
+holam  com estamso
+
+En qué surcu
+
+---- > Arrancamos el programa específicando cuál Sucursal me estoy atendiendo
+        -----> NOMBRE?
+        ----->  RUT?
+        -----> Dirección?
+        -----> Ciudad?
+        ------> Comuna?
+        ------> Cuantos años tienes? edad < 18 ==> "Quién es el tutor?" ===> Persona  loop => Tutor
+        ------> ¿Cuál es tu sexo?
+        loop:
+            -----> Qué necesita? (Pedir el código del servicio/Imprimir lista con servicios + código)
+            -----> ¿Algo más? Si? jmp loop; No? jmp sigues
+        Serían x pesos --- ¿Cómo cancela? 
+            - [0] - Efectivo
+            - [1] - Debito
+            - [2] - Crédito
+            - [3] - Convenio
+                - Qué Convenio tiene? ---> Nombre  Existe? Perfecto  Si no... "No tenemos un convenio con ese nombre"; loop
+            Pagar() 
+            "Le imprimimos el recibo"
+            "Muchas gracias por preferirnos"    

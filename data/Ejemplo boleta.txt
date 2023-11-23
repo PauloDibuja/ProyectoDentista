@@ -1,0 +1,46 @@
+Hospital Dibuja's (Dibuja's Inc.)
+SOCIEDAD ODONTOLÓGICA DIBUJA'S SPA
+SERVICIOS MÉDICOS ODONTOLÓGICOS
+
+Oficinas Centrales:
+Calle 2 Poniente, 934, Talca
+
+Sucursales:
+Av. Errázuriz, 670, Santa Cruz
+Villavicencio, 361 Of. 112, Santiago
+Avenida Portales, 205 - Local 12,  Maipú
+Raquel 646, Recoleta
+
+Fono: 3 4325 5449/ 600 432 1999
+Desde Celulares: (56-2) 3847 1209
+
+Pagina Web: hospitaldibujas.com
+Correo: contacto@hospitaldibujas.com
+
+R.U.T. : ----
+N° 3242
+Fecha : 12-03-2015
+ 
+----<CLIENTE>-----
+Cliente : Nombre
+Dirección : Dirección
+RUT: RUT
+Comuna : Comuna
+Ciudad : Ciudad
+Sucursal : Sucursal
+
+----<Profesional>-----
+Nombre: Nombre
+Especialidad: Especialidad
+
+----<RECUENTO>------
+Item 		Código		Descripción 	Cantidad	Precio Unit.	Valor
+1		    3123        Control Médico	1		    38.490		    38.490
+2		    3433        Limpieza    	1		    41.590		    41.590
+
+...
+
+TOTAL A PAGAR $		80080
+
+
+			

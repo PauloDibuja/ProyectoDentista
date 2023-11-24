@@ -10,8 +10,8 @@ PROGRESO (55%)
         -----> Ciudad?                                                                                                          -
         ------> Comuna?                                                                                                         -
         ------> Cuantos años tienes? edad < 18 ==> "Quién es el tutor?" ===> Persona  loop => Tutor                             (PROBABLE QUE LO IMPLEMENTEMOS)
-        ------> ¿Cuál es tu sexo?   edad                                                                                        -
-        loop:   < 18 ==>                                                                                                        // emu8086 reference
+        ------> ¿Cuál es tu sexo?                                                                                               -
+        loop:                                                                                                           // emu8086 reference
             -----> Qué necesita? (Pedir el código del servicio/Imprimir lista con servicios + código)                           (APLICADO)
             -----> ¿Algo más? Si? jmp loop; No? jmp sigues                                                                      (APLICADO)
         Serían x pesos --- ¿Cómo cancela?                                                                                       (APLICADO)

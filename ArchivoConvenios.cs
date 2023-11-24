@@ -2,11 +2,11 @@ using System;
 
 namespace DatosBoleta{
 
-    class ArchivoServicios{
+    class ArchivoConvenios{
 
-    public Dictionary<string, Servicio> leerServicios(string archivo){
+    public List<string> archivoConvenios(string archivo){
 
-        Dictionary<string, Servicio> servicios = new Dictionary<string, Servicio>();
+        List<string> convenios = new List<string> ();
 
         String? linea;
             try{
@@ -14,17 +14,8 @@ namespace DatosBoleta{
                 linea = sr.ReadLine();
                 
                 while (linea != null){
-
-                    string[] datos;
-                    datos = linea.Split(";");
-
-                    if (datos.Length == 4){
-                        Servicio servicio = new Servicio(datos[1], datos[0], Convert.ToInt32(datos[2]), datos[3]);
-                        servicios.Add(datos[0], servicio);
-                    }
-
+                    convenios.Add(linea);
                     linea = sr.ReadLine();
-
                 }
                 sr.Close();
             }catch (FileNotFoundException ){
@@ -32,7 +23,7 @@ namespace DatosBoleta{
             }catch (IOException){
                 Console.WriteLine("Error al intentar leer el archivo");
             }
-            return servicios;
+            return convenios;
         }
     }
 }

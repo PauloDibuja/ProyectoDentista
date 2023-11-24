@@ -29,6 +29,11 @@ namespace Money{
         public void Pagar(int monto){
             Console.WriteLine($"Se ha realizado un pago de $ {monto} bajo el convenio {this.nombreConvenio}");
         }
+
+        public string NombreConvenio{
+            get { return this.nombreConvenio; }
+            set { this.nombreConvenio = value; }
+        }
     }
 }
 

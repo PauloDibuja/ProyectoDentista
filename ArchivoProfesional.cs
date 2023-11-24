@@ -26,9 +26,9 @@ namespace DatosBoleta{
                 }
                 sr.Close();
             }catch (FileNotFoundException){
-                Console.WriteLine("No se encuentra el archivo!");
+                Console.WriteLine("No se encuentra el archivo");
             }catch(IOException){
-
+                Console.WriteLine("Error al intentar leer el archivo");
             }
             return profesionales;
         }

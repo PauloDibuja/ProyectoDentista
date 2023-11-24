@@ -29,10 +29,6 @@ Comuna : Comuna
 Ciudad : Ciudad
 Sucursal : Sucursal
 
-----<Profesional>-----
-Nombre: Nombre
-Especialidad: Especialidad
-
 ----<RECUENTO>------
 Item 		Código		Descripción 	Cantidad	Precio Unit.	Valor
 1		    3123        Control Médico	1		    38.490		    38.490

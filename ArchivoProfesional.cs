@@ -4,9 +4,9 @@ namespace DatosBoleta{
 
     class ArchivoProfesional{
 
-    public List<Profesional> leerProfesionales(string archivo){
+    public Dictionary<string, Profesional> leerProfesionales(string archivo){
 
-        List<Profesional> profesionales = new List<Profesional>();
+        Dictionary<string, Profesional> profesionales = new Dictionary<string, Profesional>();
 
         String? linea;
             try{
@@ -20,7 +20,7 @@ namespace DatosBoleta{
 
                     if (datos.Length == 4){
                         Profesional profesional = new Profesional(datos[0], datos[1], Convert.ToInt32(datos[2]), datos[3]);
-                        profesionales.Add(profesional);
+                        profesionales.Add(datos[3], profesional);
                     }
                     linea = sr.ReadLine();
                 }

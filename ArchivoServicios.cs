@@ -4,9 +4,9 @@ namespace DatosBoleta{
 
     class ArchivoServicios{
 
-    public List<Servicio> leerServicios(string archivo){
+    public Dictionary<string, Servicio> leerServicios(string archivo){
 
-        List<Servicio> servicios = new List<Servicio>();
+        Dictionary<string, Servicio> servicios = new Dictionary<string, Servicio>();
 
         String? linea;
             try{
@@ -19,8 +19,8 @@ namespace DatosBoleta{
                     datos = linea.Split(";");
 
                     if (datos.Length == 4){
-                        Servicio servicio = new Servicio(datos[1], datos[0], Convert.ToInt32(datos[2]));
-                        servicios.Add(servicio);
+                        Servicio servicio = new Servicio(datos[1], datos[0], Convert.ToInt32(datos[2]), datos[3]);
+                        servicios.Add(datos[0], servicio);
                     }
 
                     linea = sr.ReadLine();

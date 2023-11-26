@@ -19,6 +19,13 @@ class Test {
 
         ui.ObtenerDatosCliente(cliente);
 
+        Console.WriteLine("Nombre: " + cliente.Nombre);
+        Console.WriteLine("RUT: " + cliente.Rut);
+        Console.WriteLine("DirecciÓn: " + cliente.Direccion);
+        Console.WriteLine("Ciudad: " + cliente.Ciudad);
+        Console.WriteLine("Comuna: " + cliente.Comuna);
+        Console.WriteLine("Sexo: " + cliente.Sexo);
+
         List<Servicio> serviciosSolicitados = new List<Servicio>();
         
         ui.imprimirSeparador();

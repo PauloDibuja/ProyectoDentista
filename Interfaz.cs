@@ -5,79 +5,97 @@ using System.Text.RegularExpressions;
 
 namespace Interfaz{
     class InterfazIO{
+
+        public string IngresarDatosCliente(Func<char, bool> function, string mensaje1, string mensaje2, string mensaje3){
+            string? textoSolicitado;
+            do{
+                Console.Write($"{mensaje1}\n>> ");
+                textoSolicitado = Console.ReadLine();
+
+                if(textoSolicitado == "" || textoSolicitado == null){
+                    Console.WriteLine($"{mensaje2}\n");
+                    imprimirSeparador();
+                } else if(textoSolicitado.All(function) == false){
+                    Console.WriteLine($"{mensaje3}\n");
+                    imprimirSeparador();
+                    textoSolicitado = "";
+                }
+            }while(textoSolicitado == null || textoSolicitado == "");
+            return textoSolicitado;
+        }
+        public string IngresarDatosCliente(string regexPatron, string mensaje1, string mensaje2, string mensaje3){
+            Regex expr = new Regex(regexPatron);
+            string? textoSolicitado = "";
+            do{
+                Console.Write($"{mensaje1}\n>> ");
+                textoSolicitado = Console.ReadLine();
+                if(textoSolicitado == "" || textoSolicitado == null){
+                    Console.WriteLine($"{mensaje2}\n");
+                    imprimirSeparador();
+                }else if(expr.IsMatch(textoSolicitado) == false){
+                    textoSolicitado = "";
+                    Console.WriteLine($"{mensaje3}\n");
+                    imprimirSeparador();
+                }
+            }while(textoSolicitado == null || textoSolicitado == "");
+            return textoSolicitado;
+        }
+        public string IngresarDatosCliente(string mensaje1, string mensaje2){
+            string? textoSolicitado;
+            do{
+                Console.Write($"{mensaje1}\n>> ");
+                textoSolicitado = Console.ReadLine();
+                if(textoSolicitado == null || textoSolicitado == ""){
+                    Console.WriteLine($"{mensaje2}\n");
+                    imprimirSeparador();
+                }
+            }while(textoSolicitado == null || textoSolicitado == "");
+            return textoSolicitado;
+        }
+        public string IngresarDatosCliente(string mensaje){
+            string? textoSolicitado;
+            Console.Write($"{mensaje}\n>> ");
+                textoSolicitado = Console.ReadLine();
+                if(textoSolicitado == null || textoSolicitado == ""){
+                    imprimirSeparador();
+                    return "-";
+                }
+            return textoSolicitado;
+        }
         public void imprimirSeparador(){
             Console.WriteLine("----------------------------------------------------------------");
         }
-        
-        public string NombreCliente(){
-            string? nombre = "";
-            do{
-                Console.Write("¿Cuál es su nombre?\n>> ");
-                nombre = Console.ReadLine();
-
-                if(nombre == "" || nombre == null){
-                    Console.WriteLine("Por favor, ingrese su nombre.\n");
-                    imprimirSeparador();
-                } else if(nombre.All(c => char.IsLetter(c) || c == ' ') == false){
-                    Console.WriteLine("Por favor, su nombre no puede tener números o símbolos.\n");
-                    imprimirSeparador();
-                    nombre = "";
-                }
-            }while(nombre == null || nombre == "");
-            return nombre;
-        }
-        
-        public string RUTCliente(){
-            string? rut = "";
-            string regexrRutCompleto = @"^\d{1,8}-[0-9kK]$";
-            Regex expr = new Regex(regexrRutCompleto);
-            do{
-                Console.Write("¿Cuál es su RUT? (Sin puntos, con guión y número verificador)\n>> ");
-                rut = Console.ReadLine();
-                if(rut == "" || rut == null){
-                    Console.WriteLine("Por favor, ingrese su RUT.\n");
-                    imprimirSeparador();
-                }else if(expr.IsMatch(rut) == false){
-                    rut = "";
-                    Console.WriteLine("Profe ql tonto, escriba bien su RUT");
-                }
-            }while(rut == null || rut == "");
-            return rut;
-        }
-
-        public string DireccionCliente(){
-            string? direccion = "";
-            do{
-                Console.Write("¿Cuál es su dirección?\n>> ");
-                direccion = Console.ReadLine();
-                if(direccion == null || direccion == ""){
-                    Console.WriteLine("Por favor, dígame su dirección.");
-                    imprimirSeparador();
-                }
-            }while(direccion == null || direccion == "");
-            return direccion;
-        }
-
-        public string CiudadCliente(){
-            string? ciudad = "";
-            do{
-                Console.Write("¿En qué ciudad?\n>> ");
-                ciudad = Console.ReadLine();
-                if(ciudad == null || ciudad == ""){
-                    Console.WriteLine("Por favor, dígame su ciudad.");
-                    imprimirSeparador();
-                }
-            }while(ciudad == null || ciudad == "");
-            return ciudad;
-        }
-
         public void ObtenerDatosCliente(Cliente cliente){
             // Nombre del cliente
             
-            string nombreCliente = NombreCliente();
-            string rutCliente = RUTCliente();
+            string nombreCliente = IngresarDatosCliente(c => char.IsLetter(c) || c == ' ', 
+                                                        "Ingrese su nombre.", 
+                                                        "Por favor, escriba su nombre.", 
+                                                        "Su nombre no puede tener números o símbolos.");
+            
+            string rutCliente = IngresarDatosCliente(@"^\d{1,8}-[0-9kK]$",
+                                                    "Ingrese su RUT. Formato: XXXXXXXX-X",
+                                                    "Por favor, escriba su RUT.",
+                                                    "Escriba bien su RUT. Formato: XXXXXXXX-X");
+            
+            string direccionCliente = IngresarDatosCliente("Ingrese su dirección.",
+                                                         "Por favor, ingrese su dirección.");
+            
+            string ciudadCliente = IngresarDatosCliente("Ingrese su ciudad.",
+                                                         "Por favor, ingrese su ciudad.");
 
+            string comunaCliente = IngresarDatosCliente("Ingrese su comuna.",
+                                                         "Por favor, ingrese su comuna.");
+
+            string sexoCliente = IngresarDatosCliente("Ingrese su sexo. ['M' : Masculino, 'F' : Femenino, 'X' : No Binaria]");
             //
+
+            cliente.Nombre = nombreCliente;
+            cliente.Rut = rutCliente;
+            cliente.Direccion = direccionCliente;
+            cliente.Ciudad = ciudadCliente;
+            cliente.Comuna = comunaCliente;
+            cliente.Sexo = sexoCliente;
         }
         public void DecididoServicios(ref int opcion)
         {
